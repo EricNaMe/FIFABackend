@@ -1,4 +1,4 @@
-package com.fifa.rest.webservices.restfulwebservices.user;
+package com.fifa.rest.webservices.restfulwebservices.team;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
