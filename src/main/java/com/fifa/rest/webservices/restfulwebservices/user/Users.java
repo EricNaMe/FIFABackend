@@ -17,10 +17,30 @@ public class Users {
 	private String country;
 	private Integer age;
 	private Date birthDate;
+	private String email;
+	private String password;
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	
 		
 	protected Users() {}
 	
-	public Users(Integer id, String name, String alias, String country, Integer age, Date birthDate) {
+	public Users(Integer id, String name, String alias, String country, Integer age, Date birthDate, String email, String password) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -28,6 +48,9 @@ public class Users {
 		this.country = country;
 		this.age = age;
 		this.birthDate = birthDate;
+		this.email = email;
+		this.password = password;
+		
 	}
 	
 	@Override
