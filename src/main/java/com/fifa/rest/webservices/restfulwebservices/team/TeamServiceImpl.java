@@ -14,12 +14,10 @@ public class TeamServiceImpl implements ITeamService{
 	
 	@Override
 	public List<Team> ListAll(){
-		List<Team> teams = new ArrayList<>();
-		
+		List<Team> teams = new ArrayList<>();		
 		repository.findAll().forEach(teams::add);
 		return teams;
 	}
-	
 
 	
 	@Override

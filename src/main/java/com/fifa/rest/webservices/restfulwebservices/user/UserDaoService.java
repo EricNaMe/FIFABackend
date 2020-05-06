@@ -13,12 +13,11 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 
 @Service
-public class UserDaoService {
+public class UserDaoService  {
 	
 	@Autowired
-	private UserRepository repository;
-	
-	
+	private UsersRepository repository;
+
 	public List<Users> findAll() {
 		List<Users> users = new ArrayList<>();		
 		repository.findAll().forEach(users::add);
@@ -30,9 +29,14 @@ public class UserDaoService {
 		return repository.findById(id);
 	}
 		
-	public Users save(@RequestBody Users usr) {		
+	
+	public Users save(Users usr) {		
 		Users savedUser = repository.save(usr);		
 		return savedUser;
+	}	
+	
+	public Users findByEmail(String email) {
+		return repository.findByEmail(email);
 	}
 
 }
