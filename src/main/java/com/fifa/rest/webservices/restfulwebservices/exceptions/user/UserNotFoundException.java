@@ -1,4 +1,4 @@
-package com.fifa.rest.webservices.restfulwebservices.exceptions;
+package com.fifa.rest.webservices.restfulwebservices.exceptions.user;
 
 public class UserNotFoundException extends RuntimeException {
 	private static final long serialVersionUID = 1L;

@@ -41,43 +41,4 @@ public class RestfulWebServicesApplication {
 	
 }
 	
-	   @Bean
-	    CorsFilter corsFilter() {
-	        CorsFilter filter = new CorsFilter();
-	        return filter;
-	    }
-	   
-
-	   
-	
-	@EnableWebSecurity
-	@Configuration
-	class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
-		@Override
-		protected void configure(HttpSecurity http) throws Exception {
-			http.csrf().disable()
-				.addFilterBefore(corsFilter(),SessionManagementFilter.class)
-				.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)				
-				.authorizeRequests()
-				.antMatchers(HttpMethod.POST, "/user").permitAll()
-				.antMatchers(HttpMethod.POST, "/login").permitAll()
-				.antMatchers(HttpMethod.GET, "/users").permitAll()				
-				.anyRequest().authenticated();
-		}
-	}
-	
-	/*@Bean
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {			
-				  registry.addMapping("/*").allowedOrigins("*").allowedMethods("GET", "POST", "OPTIONS", "PUT")
-	                .allowedHeaders("Content-Type", "X-Requested-With", "accept", "Origin", "Access-Control-Request-Method",
-	                        "Access-Control-Request-Headers")
-	                .exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
-			}
-		};
-	}*/
-	
 }

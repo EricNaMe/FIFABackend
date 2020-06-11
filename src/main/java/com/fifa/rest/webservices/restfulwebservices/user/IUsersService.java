@@ -12,6 +12,7 @@ public interface IUsersService {
 	public Users save(Users usr);
 	public Optional <Users> findOne(Long id);
 	public List<Users> findAll();
+	public boolean delete(Integer id);
 	
 
 }
